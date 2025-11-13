@@ -56,7 +56,34 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 ```
 Your answer...
 ```
+Type 1 does not keep history and type 2 does
 
+Type 1: 
+UPDATE CUSTOMER_ADDRESS
+SET street_address = '1 university ave',
+    city = 'Toronto',
+    province = 'ON',
+    postal_code = 'M1Y 2Y3',
+    last_updated_date = CURRENT_DATE
+WHERE customer_id = 1;
+
+Type 2:
+-- add column for historical text
+ALTER TABLE CUSTOMER_ADDRESS
+ADD COLUMN effective_start_date DATE,
+ADD COLUMN effective_end_date DATE,
+ADD COLUMN is_current CHAR(1) CHECK (is_current IN ('Y', 'N'));
+
+-- mark old as inactive
+UPDATE CUSTOMER_ADDRESS
+SET effective_end_date = CURRENT_DATE,
+    is_current = 'N'
+WHERE customer_id = 1 AND is_current = 'Y';
+
+-- add new info
+INSERT INTO CUSTOMER_ADDRESS (
+    customer_id, street_address, city, province, postal_code, effective_start_date, is_current)
+VALUES ( 1, '1 sql ave', 'Toronto', 'ON', 'M4E 2G6', CURRENT_DATE, 'Y');
 ***
 
 ## Section 2:
@@ -185,3 +212,4 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 ```
 Your thoughts...
 ```
+The main problem is that AI is taught by humans. AI is trained to recognize patterns and reproduce existing relationships, however it learns on test datasets that have been coded by humans, and algorithms are validated through testing how well it replicates what it is taught. However, humans are inherently biased and in this instance, have tagged images with offensive descriptors and AI is replicating those biases and reproducing harmful associations. Therefore, this example shows how AI can unintentionally replicate and potentially amplify human prejudice. The example went on to mention how this may be used by police departments or other government agencies, for example, face recognition. If we know that these systems are reproducing human bias, it follows that similar biases likely exist within facial recognition programs, raising serious concerns about racial profiling and discrimination.
