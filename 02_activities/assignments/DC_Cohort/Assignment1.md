@@ -207,3 +207,10 @@ Consider, for example, concepts of fariness, inequality, social structures, marg
 ```
 Your thoughts...
 ```
+One database that comes to mind is the healthcare system, specifically the Ontario Health Insurance Plan (OHIP). Being included in this data system, ie having an OHIP card with a unique identifying number, grants access to publicly covered health services that would otherwise be prohibitively expensive. Like the example discussed in the article, this data system embeds value judgments through its rules for inclusion, which not everyone can meet.
+
+To be eligible for OHIP, individuals must have legal status in Canada (eg: be a citizen or hold a valid work permit). This requirement excludes several groups, such as temporary foreign workers between contracts, some international students, and non-status individuals, who are left to pay out-of-pocket for essential health services.
+
+Accessing OHIP also requires extensive documentation, which can serve as an additional barrier. Proof of eligibility requires documents, such as a passport, birth certificate, permanent resident card, letter from the Immigration and Refugee Board, or work permit; all of which can be difficult or costly to obtain. Proof of residency in Ontario often relies on documents that assume employment or housing, which is not the reality for all residents. Finally, proof of identity is also required, which may be inaccessible for some individuals due to financial or administrative challenges.
+
+This system, like others managed by government institutions (eg: the passport office or Ministry of Transportation), is interconnected. Gaining access to one database often facilitates access to others, as having “proof of status” becomes a key that unlocks multiple systems. However, for those unable to meet these requirements, these interconnected databases reinforce exclusion and inequity through administrative and financial barriers.
